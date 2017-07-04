@@ -16,34 +16,15 @@
 	 <div id="searchvalues" style="width: 300px"></div>
 	</div>
  	<link rel="stylesheet" type="text/css" href="style.css">
+ 	<script src="index.js"></script>
 <script type="text/javascript">
 
-	$("#name").keyup(function(){
+function append(data) {
 
- 
-		var name = $("#name").val();
-		if(name == "") {
-			$("#searchvalues").html("");
-		}
-		else {
+	$("#name").val(data);
+	$("#searchvalues").hide();
 
-		$.ajax( {
-
-			url : "search.php",
-			type : "POST",
-			data : "name="+ name,
-			success : function(data) {
-
-				 
-
-				$("#searchvalues").html(data).show();
-
-			}	
-
-
-		});
 }
-	});
 
 </script>
 </body>
